@@ -1,0 +1,42 @@
+import json
+import numpy as np
+
+file = json.load(open('../results/on_repost_bio_chronological_info_summary_3.json', 'r'))
+
+
+mean_ei = np.mean([data['EI_index'] for simulation, data in file.items()])
+min_ei = np.min([data['EI_index'] for simulation, data in file.items()])
+max_ei = np.max([data['EI_index'] for simulation, data in file.items()])
+mean_gini_followers = np.mean([data['gini_coefficient_followers'] for simulation, data in file.items()])
+mean_gini_reposts = np.mean([data['gini_coefficient_reposts'] for simulation, data in file.items()])
+mean_correlation_followers = np.mean([data['correlations']['correlation_followers'] for simulation, data in file.items()])
+min_correlation_followers = np.min([data['correlations']['correlation_followers'] for simulation, data in file.items()])
+max_correlation_followers = np.max([data['correlations']['correlation_followers'] for simulation, data in file.items()])
+mean_correlation_retweets = np.mean([data['correlations']['correlation_retweets'] for simulation, data in file.items()])
+min_correlation_retweets = np.min([data['correlations']['correlation_retweets'] for simulation, data in file.items()])
+max_correlation_retweets = np.max([data['correlations']['correlation_retweets'] for simulation, data in file.items()])
+mean_number_reposts = np.mean([data['actions']['1'] for simulation, data in file.items()])
+mean_number_posts = np.mean([data['actions']['2'] for simulation, data in file.items()])
+
+mean_followers = np.mean([data['inequality']['mean_followers'] for simulation, data in file.items()])
+mean_max_followers = np.mean([data['inequality']['max_followers'] for simulation, data in file.items()])
+mean_reposts = np.mean([data['inequality']['mean_reposts'] for simulation, data in file.items()])
+max_reposts = np.mean([data['inequality']['max_reposts'] for simulation, data in file.items()])
+
+print(f"Mean EI index: {mean_ei}")
+print(f"Min EI index: {min_ei}")
+print(f"Max EI index: {max_ei}")
+print(f"Mean Gini coefficient followers: {mean_gini_followers}")
+print(f"Mean Gini coefficient reposts: {mean_gini_reposts}")
+print(f"Mean correlation followers: {mean_correlation_followers}")
+print(f"Min correlation followers: {min_correlation_followers}")
+print(f"Max correlation followers: {max_correlation_followers}")
+print(f"Mean correlation retweets: {mean_correlation_retweets}")
+print(f"Min correlation retweets: {min_correlation_retweets}")
+print(f"Max correlation retweets: {max_correlation_retweets}")
+print(f"Mean number of reposts: {mean_number_reposts}")
+print(f"Mean number of posts: {mean_number_posts}")
+print(f"Mean followers: {mean_followers}")
+print(f"Mean max followers: {mean_max_followers}")
+print(f"Mean reposts: {mean_reposts}")
+print(f"Mean max reposts: {max_reposts}")
