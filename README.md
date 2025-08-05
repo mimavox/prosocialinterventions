@@ -1,6 +1,4 @@
-# MasterProject
-
-Code for thesis titled "Testing Prosocial Interventions on Social Media Through Generative Simulation" by Maik Larooij.
+# Code for paper "Can We Fix Social Media? Testing Prosocial Interventions using Generative Social Simulation"
 
 ## How to run?
 
