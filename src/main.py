@@ -104,7 +104,7 @@ def run_simulation(simulation_size = 500, simulation_steps = 10000,
                 platform.set_client(new_client)
                 client.close()
 
-                client = new_client
+                client = new_clientsource .venv/bin/activate
     except:
         json.dump(platform.generate_log(), open(filename + '.json', 'w'), indent=4, default=str)
 
